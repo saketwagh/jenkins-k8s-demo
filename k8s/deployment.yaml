@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-jenkins
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-jenkins
+  template:
+    metadata:
+      labels:
+        app: hello-jenkins
+    spec:
+      containers:
+        - name: web
+          image: IMAGE_PLACEHOLDER
+          ports:
+            - containerPort: 80
